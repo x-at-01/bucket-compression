@@ -113,7 +113,7 @@ fn into_floats(mut buf: Vec<u8>) -> Vec<f64> {
 
     let size = std::mem::size_of::<f64>();
     let len = buf.len() / size;
-    assert!(buf.len() % size == 0);
+    assert!(buf.len().is_multiple_of(size));
 
     let floats = unsafe { Vec::from_raw_parts(buf.as_mut_ptr() as *mut f64, len, len) };
     std::mem::forget(buf);

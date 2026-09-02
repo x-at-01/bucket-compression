@@ -78,6 +78,12 @@ pub fn tests() -> impl IntoIterator<Item = Test> {
             false,
         ),
         Test::floats(
+            "fastalp",
+            |values| Ok(fastalp::compress(values)),
+            |slice| fastalp::decompress::<f64>(slice).map_err(|e| anyhow::anyhow!("{e:?}")),
+            false,
+        ),
+        Test::floats(
             "tsz",
             tsz_f64::compress_tsz,
             tsz_f64::decompress_tsz,
@@ -120,4 +126,18 @@ pub fn tests() -> impl IntoIterator<Item = Test> {
             true,
         ),
     ]
+}
+
+#[cfg(test)]
+mod test_codecs {
+    #[test]
+    fn test_fastalp_roundtrip() {
+        let values = vec![1.23, 4.56, 7.89, 0.0, -0.0, f64::NAN, f64::INFINITY];
+        let compressed = fastalp::compress(&values);
+        let restored = fastalp::decompress::<f64>(&compressed).unwrap();
+        assert_eq!(values.len(), restored.len());
+        for (a, b) in values.iter().zip(&restored) {
+            assert_eq!(a.to_bits(), b.to_bits());
+        }
+    }
 }

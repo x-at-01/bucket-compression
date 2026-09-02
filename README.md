@@ -23,6 +23,9 @@ Lossless algorithms:
 - lz4
 - deflate, gzip, and zlib
 - zstd
+- [fastalp]: Adaptive Lossless Floating-Point (ALP, SIGMOD 2024) compression algorithm.
+  Features Decimal Division Exact Mode (eliminating multiplication roundoff exceptions),
+  Adaptive Delta-ALP differential encoding, Outlier Smoothing Isolation, and Raw Fallback Safeguard.
 - [fpzip] reversible
 - [zfp] reversible
 - tsz: [Gorilla] XOR-based floating point compression. The implementation is
@@ -119,3 +122,4 @@ The test suite is configured to create HTML reports under
 [zfp]: https://zfp.readthedocs.io/en/latest/
 [fpzip]: https://github.com/LLNL/fpzip
 [gorilla]: https://blog.acolyer.org/2016/05/03/gorilla-a-fast-scalable-in-memory-time-series-database/
+[fastalp]: https://github.com/webc-site/wedb_embed/tree/main/fastalp
