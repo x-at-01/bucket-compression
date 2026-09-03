@@ -409,9 +409,9 @@ dependencies = [
 
 [[package]]
 name = "fastalp"
-version = "0.1.25"
+version = "0.1.29"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b380f41350790caa63e13fc239ccf097e781fa1481a0546b227766e75ea09c95"
+checksum = "ffcb7b9a32bc23d4db4e717b1864db068c601b7e523fc00af249804999561725"
 dependencies = [
  "thiserror",
 ]

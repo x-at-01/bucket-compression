@@ -29,7 +29,7 @@ lz4 = "1.24.0"
 zstd = "0.13.0"
 
 # FP algos
-fastalp = "0.1.25"
+fastalp = "0.1.29"
 fpzip-sys = "0.1.8"
 tsz = "0.1.4"
 zfp-sys = "0.1.14"
