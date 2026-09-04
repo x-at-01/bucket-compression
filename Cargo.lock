@@ -409,12 +409,19 @@ dependencies = [
 
 [[package]]
 name = "fastalp"
-version = "0.1.29"
+version = "0.1.41"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ffcb7b9a32bc23d4db4e717b1864db068c601b7e523fc00af249804999561725"
+checksum = "e25e7bfb5407c30e0f22524009c76231286b47c96c23929843f67bda0ff7009e"
 dependencies = [
+ "fearless_simd",
  "thiserror",
 ]
+
+[[package]]
+name = "fearless_simd"
+version = "0.7.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f4beca3cb2444e3304ac30843cc091f44ed58932353cd492ce740067bfce6b12"
 
 [[package]]
 name = "flate2"
